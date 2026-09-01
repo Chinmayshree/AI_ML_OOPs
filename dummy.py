@@ -16,3 +16,7 @@ lst.clear()
 lst.append(12)
 print()
 print(lst)
+
+from oops_proj import chatbook
+
+obj = chatbook()

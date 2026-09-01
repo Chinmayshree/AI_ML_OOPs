@@ -20,14 +20,13 @@ class chatbook:
                 5.press any other key to exit''')
            
            if user_input == '1':
-                pass
-                #  self.signUp()
+               self.signUp()
            elif user_input =='2':
                 self.signIn()
            elif user_input =='3':
-               pass
+               self.my_post()
            elif user_input =='4':
-               pass
+               self.my_msg()
            else:
                exit()
                
@@ -41,6 +40,7 @@ class chatbook:
         print("You have sucessfully Signed-In into the Chatbook")
         print("\n")
         self.menu()
+        self.my_msg()
     
     def signIn(self):
          
@@ -59,7 +59,24 @@ class chatbook:
          print("\n")
          self.menu()
          
-                 
+    def my_post(self):
+        if self.loggedIn == True:
+            post = input("Enter the msg to sent as post")
+            print(f"below content has been sent as {post}")
+        else:
+            print("plz signIn first to send a post")    
+        print("\n")
+        self.menu()
+    def my_msg(self):
+            if self.loggedIn == True:
+                text = input("Enter the msg to sent as to frd")
+                frd = input("whom to send a msg")
+                print(f"below {text} has been sent as {frd}")
+            else:
+                print("plz signIn first to send a msg")    
+            print("\n")
+            self.menu()
+                                
              
              
 obj = chatbook() 
